@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkFlow | Smart Parking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="logo">PARK<span>FLOW</span></div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#induccion">Inducción</a>
+            <a href="#contacto">Contacto</a>
+            <button class="btn-reserva" onclick="scrollToReserva()">+ Reservar</button>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- ===== HERO SECTION ===== -->
+        <section id="inicio" class="hero">
+            <div class="hero-image">
+                <i class="fas fa-parking fa-10x"></i>
+            </div>
+            <div class="hero-text">
+                <h1>Sistema de Gestión de Estacionamiento Inteligente</h1>
+                <p>Optimiza tu espacio, reduce el tráfico y mejora la experiencia del usuario con nuestra solución inteligente.</p>
+                <div class="hero-details">
+                    <p><i class="fas fa-arrow-right"></i> Registro fácil de vehículos</p>
+                    <p><i class="fas fa-arrow-right"></i> Monitoreo en tiempo real</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DASHBOARD - CONTADORES EN TIEMPO REAL ===== -->
+        <section class="status-summary">
+            <div class="status-card">
+                <div class="status-circle green">
+                    <span class="status-value" id="freeSpotsCount">16</span>
+                </div>
+                <h3>Cupos Libres</h3>
+            </div>
+            <div class="status-card">
+                <div class="status-circle gold">
+                    <span class="status-value" id="motorcyclesCount">0</span>
+                </div>
+                <h3>Motos</h3>
+            </div>
+            <div class="status-card">
+                <div class="status-circle white">
+                    <span class="status-value" id="carsCount">0</span>
+                </div>
+                <h3>Vehículos</h3>
+            </div>
+        </section>
+
+        <!-- ===== INDUCTION GUIDE ===== -->
+        <section id="induccion" class="induction-guide">
+            <h2>Guía de Uso - Inducción</h2>
+            <div class="induction-steps">
+                <div class="induction-step">
+                    <div class="step-number"><span>1</span></div>
+                    <div class="step-icon">
+                        <i class="fas fa-mouse"></i>
+                    </div>
+                    <h4>Haz Clic</h4>
+                    <p>Selecciona un cupo verde disponible</p>
+                </div>
+                <div class="induction-step">
+                    <div class="step-number"><span>2</span></div>
+                    <div class="step-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h4>Registra</h4>
+                    <p>Ingresa tu placa y tipo de vehículo</p>
+                </div>
+                <div class="induction-step">
+                    <div class="step-number"><span>3</span></div>
+                    <div class="step-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Estaciona</h4>
+                    <p>Confirma y disfruta del servicio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PARKING MAP ===== -->
+        <section id="reserva" class="parking-map">
+            <div class="parking-container">
+                <h2>Mapa de Cupos Disponible</h2>
+                <p class="parking-info">Haz clic en un cupo para reservar (verde) o dar salida (rojo)</p>
+                <div id="grid-parqueo" class="map-grid"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+            <!-- Column 1: Company Info -->
+            <div class="footer-column">
+                <h3>PARK<span>FLOW</span></h3>
+                <p>Solución inteligente de gestión de estacionamientos con seguridad, rapidez y transparencia.</p>
+                <div class="footer-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Cupos Gestionados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Disponibilidad</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2: Social & Contact -->
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone"></i> +57 (1) 2345-6789</p>
+                    <p><i class="fas fa-envelope"></i> info@parkflow.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Zona Dorada, Medellín</p>
+                </div>
+            </div>
+
+            <!-- Column 3: Location Map -->
+            <div class="footer-column">
+                <h4>Ubicación</h4>
+                <div class="location-map">
+                    <svg width="100%" height="150" viewBox="0 0 200 150">
+                        <rect width="200" height="150" fill="#1a1a1a"/>
+                        <g stroke="#d4af37" stroke-width="0.5" opacity="0.5">
+                            <line x1="0" y1="30" x2="200" y2="30"/>
+                            <line x1="0" y1="60" x2="200" y2="60"/>
+                            <line x1="0" y1="90" x2="200" y2="90"/>
+                            <line x1="0" y1="120" x2="200" y2="120"/>
+                            <line x1="50" y1="0" x2="50" y2="150"/>
+                            <line x1="100" y1="0" x2="100" y2="150"/>
+                            <line x1="150" y1="0" x2="150" y2="150"/>
+                        </g>
+                        <circle cx="100" cy="75" r="8" fill="#d4af37"/>
+                        <circle cx="100" cy="75" r="12" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.4"/>
+                    </svg>
+                </div>
+                <p style="text-align: center; color: #d4af37; font-size: 0.9rem; margin-top: 0.5rem;">Centro Comercial Premium<br>Medellín - Colombia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ParkFlow. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL: RESERVA DE CUPO ===== -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-overlay" onclick="closeReservationModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reservar Cupo</h2>
+                <button class="modal-close" onclick="closeReservationModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="spot-info">
+                    <p>Cupo Seleccionado: <strong id="selectedSpot">-</strong></p>
+                </div>
+                <form id="reservationForm">
+                    <div class="form-group">
+                        <label for="vehiclePlate">Placa del Vehículo (ABC-123):</label>
+                        <input type="text" id="vehiclePlate" placeholder="Ej: ABC-123" pattern="[A-Z]{3}-?\d{3}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Vehículo:</label>
+                        <div class="vehicle-selector">
+                            <input type="radio" id="vehicleCar" name="vehicleType" value="car" checked>
+                            <label for="vehicleCar" class="radio-label"><i class="fas fa-car"></i> Carro</label>
+                            
+                            <input type="radio" id="vehicleMoto" name="vehicleType" value="moto">
+                            <label for="vehicleMoto" class="radio-label"><i class="fas fa-motorcycle"></i> Moto</label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-confirm"><i class="fas fa-check"></i> Confirmar Reserva</button>
+                        <button type="button" class="btn-cancel" onclick="closeReservationModal()"><i class="fas fa-times"></i> Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL: PANEL ADMINISTRATIVO (SALIDA) ===== -->
+    <div id="adminModal" class="modal">
+        <div class="modal-overlay" onclick="closeAdminModal()"></div>
+        <div class="modal-content admin-modal">
+            <div class="modal-header">
+                <h2>Panel de Administración - Dar Salida</h2>
+                <button class="modal-close" onclick="closeAdminModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="adminContent">
+                    <!-- Aquí se renderiza: vista de entrada de contraseña o vista de confirmación -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NOTIFICACIÓN DE ÉXITO ===== -->
+    <div id="successNotification" class="notification success">
+        <i class="fas fa-check-circle"></i>
+        <div class="notification-content">
+            <h4 id="notificationTitle">¡Éxito!</h4>
+            <p id="notificationMessage">Operación completada correctamente</p>
+        </div>
+    </div>
+
+    <!-- ===== NOTIFICACIÓN DE ERROR ===== -->
+    <div id="errorNotification" class="notification error">
+        <i class="fas fa-exclamation-circle"></i>
+        <div class="notification-content">
+            <h4>Error</h4>
+            <p id="errorMessage">Algo salió mal</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
