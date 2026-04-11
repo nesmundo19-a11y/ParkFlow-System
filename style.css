@@ -28,6 +28,9 @@ html {
 }
 
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
     background-color: var(--dark);
     color: var(--white);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
