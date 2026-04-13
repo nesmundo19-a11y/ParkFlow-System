@@ -1,56 +1,64 @@
-# ParkFlow
+# 🦅 ParkFlow - Sistema de Gestión de Estacionamiento Inteligente
 
-## Elevator Pitch
+> **Proyecto de Ingeniería de Sistemas** > **Ubicación:** Nodo Comercial - Maicao, La Guajira  
+> **Estado:** Fase de Documentación y Prototipado Funcional
 
-1. El **"Cerebro"** del Estilo (Variables **:root**)
-Variables Globales (:root).Centralizamos toda la identidad visual (colores dorado y negro, sombras y transiciones). Esto permite que el código sea mantenible: si quiero cambiar el color de la marca, lo hago en una sola línea y todo el sitio se actualiza.
+---
 
-2. Estructura Base (**Reset y Body**)
-El Reset para limpiar márgenes del navegador y la configuración del Body. Aquí es donde aplicamos el primer CSS Grid para definir que la página siempre tenga un Header arriba, el Contenido en el medio y el Footer abajo, ocupando el 100% de la altura de la pantalla."
+## 📝 1. Información General
+* **Nombre del Proyecto:** ParkFlow
+* **Metodología:** Ágil (Scrum)
+* **Enfoque:** Optimización de movilidad urbana y logística comercial.
 
-3. Componentes de Interfaz (**Navbar y Hero**)
-Componentes visuales.Navbar usa Flexbox para separar el logo de los enlaces de forma automática. La sección Hero, donde usamos animaciones (@keyframes) para que el ícono flote, dándole dinamismo y un toque moderno a la bienvenida del usuario.
+---
 
-4. Paneles de Información (**Status y Guía**)
-Paneles de estado y la guía de inducción. Aquí usamos de nuevo Grillas Responsivas. Cada tarjeta tiene efectos de hover para que el usuario sienta que la interfaz reacciona a sus acciones.
+## 🚨 2. Descripción del Problema
+En el municipio de **Maicao**, la gestión de estacionamientos se realiza mayoritariamente de forma empírica y manual, lo que genera saturación vehicular, pérdida de tiempo para los conductores y falta de datos precisos para los administradores.
 
-5. El Corazón Técnico (**Parking Map - Grid de Cupos**)
-El Mapa de Parqueo. Está construido íntegramente con un Grid dinámico. Los estados **'Libre' (verde)** y **'Ocupado' (rojo)** se diferencian visualmente con gradientes modernos, y todo se ajusta automáticamente al tamaño del dispositivo."
+**ParkFlow** resuelve esta problemática digitalizando el control de cupos en tiempo real. Mediante una arquitectura técnica moderna, permitimos visualizar la disponibilidad inmediata, reduciendo la congestión en las zonas comerciales y profesionalizando la administración de parqueaderos locales.
 
-6. Capas de Interacción (**Modales y Notificaciones**)
-Los Modales y Notificaciones. Usamos posicionamiento fixed y backdrop-filter para crear ese efecto de desenfoque cuando se abre un formulario de reserva, manteniendo el enfoque del usuario.
+---
 
-7.El Cierre (**Footer y Media Queries**)
-El Footer enfocado en Maicao y, lo más importante, las Media Queries. Aquí es donde el código se adapta a tablets, computadores y celulares
+## 🎯 3. Público Objetivo
+1.  **Administradores de Estacionamientos:** Propietarios en Maicao que necesitan modernizar su control de ingresos, salidas y ocupación total.
+2.  **Conductores (Locales y Visitantes):** Usuarios que buscan una experiencia de parqueo rápida, segura y asistida por tecnología en el sector comercial.
 
-### Diagrama de Arquitectura
+---
 
-```text
-+-----------------------------------------+
-| HEADER: Navbar + Marca + Navegación      |
-+-----------------------------------------+
-| MAIN: Hero + Dashboard + Inducción +     |
-|       Parking Grid                       |
-+-----------------------------------------+
-| FOOTER: Contacto + Tarjeta Nodo Logístico|
-+-----------------------------------------+
-```
+## 👥 4. Listado de Integrantes y Roles
+| Integrante | Rol | Responsabilidad Principal |
+| :--- | :--- | :--- |
+| **Néstor Granadillo** | **Project Manager** | Gestión del Backlog, Arquitectura de Software y Lógica de Negocio. |
+| **Savier Berrio** | **Frontend Lead** | Desarrollo de Interfaz (UI), Experiencia de Usuario (UX) y Maquetación. |
 
-## Historias de Usuario
-- **Como conductor**, quiero ver cupos disponibles en tiempo real para ahorrar tiempo y localizar rápidamente dónde estacionar.
-- **Como visitante**, quiero reservar un cupo con mi placa y tipo de vehículo para asegurar el espacio antes de llegar.
-- **Como administrador**, quiero liberar cupos ocupados desde un panel de control para mantener la disponibilidad actualizada y la operación eficiente.
+---
 
-## Taller de Roles
-* **Néstor Granadillo:** Gerente de Proyecto (Project Manager).
-* **Savier Berrio:** Líder de Desarrollo Frontend.
+## 🏗️ 5. Arquitectura Técnica (Layout & Estructura)
 
-## 🛠️ Arquitectura Técnica
-Para garantizar el cumplimiento de los criterios de **Factibilidad y Coherencia**, el sistema ha sido desarrollado bajo el siguiente stack:
+El código ha sido organizado siguiendo un orden lógico de ingeniería para garantizar la mantenibilidad y escalabilidad:
 
-* **HTML5 Semántico:** Estructura clara y accesible para cada sección del producto.
-* **CSS3 Moderno:** * **CSS Grid:** Implementado en el layout principal (`body`) y en el tablero de cupos dinámico.
-    * **Flexbox:** Utilizado en barras de navegación, tarjetas de estado y controles internos.
-    * **Diseño High-End:** Paleta de colores Negro Mate y Dorado para una estética profesional.
-* **JavaScript (Vanilla):** Lógica pura para la gestión de modales, notificaciones y validación de formularios sin dependencias externas.
-* **Web Storage:** Preparado para la persistencia de datos local, asegurando la viabilidad técnica del proyecto.
+### ⚙️ El "Cerebro" (Variables `:root`)
+Centralizamos la identidad visual mediante variables globales. Esto permite que el sistema sea fácil de actualizar visualmente (colores negro mate y dorado) desde un solo punto.
+
+### 📐 Estructura Base (`Reset` & `Body`)
+Implementamos un sistema de **CSS Grid** en el `body` para definir una estructura de tres bloques coherentes:
+* **Header:** Navegación persistente y branding.
+* **Main:** Contenedor dinámico de la lógica (Dashboard y Mapa).
+* **Footer:** Información de contacto y validación de sede local.
+
+### ⚡ Componentes de Interfaz (`Navbar` & `Hero`)
+* **Flexbox:** Utilizado para la distribución proporcional y responsiva de los elementos de navegación.
+* **@Keyframes:** Animaciones personalizadas para mejorar la interactividad y el "feeling" profesional de la plataforma.
+
+### 📊 Gestión de Estados (`Status` & `Parking Grid`)
+Implementamos un **Grid Dinámico** con `auto-fit` y `minmax` para el mapa de cupos. Esto asegura que la plataforma sea **100% Responsiva**, adaptándose perfectamente desde monitores de escritorio hasta dispositivos móviles en la calle.
+
+---
+
+## 📖 6. Historias de Usuario
+* **Conductor:** "Quiero visualizar los cupos libres en tiempo real para ahorrar tiempo y combustible".
+* **Administrador:** "Quiero registrar ingresos y salidas de forma ágil para tener control exacto del inventario".
+* **Usuario Nuevo:** "Quiero ver la ubicación y contacto de la sede en Maicao para confiar en el servicio".
+
+---
+*© 2026 ParkFlow | Ingeniería de Sistemas - Universidad de la Guajira*
