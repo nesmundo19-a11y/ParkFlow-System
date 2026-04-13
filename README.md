@@ -1,7 +1,7 @@
 # 🦅 ParkFlow - Sistema de Gestión de Estacionamiento Inteligente
 
-> **Proyecto de Ingeniería de Sistemas** > **Ubicación:** Nodo Comercial - Maicao, La Guajira  
-> **Estado:** Fase de Documentación y Prototipado Funcional
+> **Proyecto de Ingeniería de Sistemas** > **Ubicación:** Maicao-La Guajira  
+> **Estado:** Fase de Documentación.
 
 ---
 
